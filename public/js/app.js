@@ -1,5 +1,5 @@
 const form = document.querySelector('form');
-const baseUrl = 'http://localhost:3000/weather';
+const baseUrl = '/weather';
 const messageOne = document.querySelector('#message1');
 const messageTwo = document.querySelector('#message2');
 
@@ -8,6 +8,7 @@ messageTwo.textContent = '';
 
 const fetchWeather = async location => {
   if (!location) {
+    messageTwo.textContent = "Location can't be empty";
     return;
   }
   const url = `${baseUrl}/?address=${location}`;
